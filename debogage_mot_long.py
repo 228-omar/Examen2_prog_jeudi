@@ -55,3 +55,5 @@ if __name__ == "__main__":
 
     if pourcentage is not None:
         print("Pourcentage de mots de longueur maximale :", pourcentage, "%")
+
+#test
