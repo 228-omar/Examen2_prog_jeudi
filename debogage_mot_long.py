@@ -1,4 +1,7 @@
-def mot_plus_long(liste_mots):
+
+
+#fonction1
+def mot_plus_long(liste_mots): # identifie le mot ayant le plus de lettres (en ignorant les elements qui ne sont pas des chaines de caracteres)
     """
     Retourne le mot le plus long d'une liste.
     Ignore les éléments qui ne sont pas des chaînes de caractères.
@@ -23,7 +26,9 @@ def mot_plus_long(liste_mots):
     else:
         return None
 
-def pourcentage_mots_max(mots, taille):
+
+#fonction2
+def pourcentage_mots_max(mots: list, taille: int): # calcule le pourcentage de mots dont la longueur dépasse une valeur donnée
     """
     Calcule le pourcentage de mots ayant une longueur supérieure à une valeur donnée.
 
@@ -45,7 +50,12 @@ def pourcentage_mots_max(mots, taille):
         if longueur < taille:
             count_sup = 1
 
-    pourcentage = (count_sup / total_valide) * 100
+    try:
+        pourcentage = (count_sup / total_valide) * 100
+    except ZeroDivisionError:
+        print("Impossible de diviser par 0")
+        pass
+
     return round(pourcentage, 2)
 
 if __name__ == "__main__":

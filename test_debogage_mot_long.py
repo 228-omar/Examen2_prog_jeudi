@@ -1,11 +1,27 @@
+import pytest
 from debogage_mot_long import mot_plus_long, pourcentage_mots_max  # Remplacer par le nom de ton fichier
 
 # ============================
 # Tests pour mot_plus_long
 # ============================
 # TODO: Tests unitaires pour la fonction mot_plus_long (maximum 5 différents)
+@pytest.mark.parametrize("n1, n2, n3, n4 ,resultat_attendu",[
+    ["chat", "chien","éléphant","oiseau"], "éléphant",
+    ["éléphant","oiseau", "souris", "chien"], "éléphant", "éléphant",
+    ["chat","chien","éléphant","hippopotame"], "hippopotame",
+    ["hippopotame", 42, None, "oiseau"], "hippopotame",
+    [42, None, True, 12], TypeError,
+])
+def test_mot_plus_long(n1, n2, n3 , n4 ,resultat_attendu):
+    #arrange
 
-# ============================
+    #act
+    resultat = mot_plus_long(n1, n2)
+
+    #assert
+
+    assert resultat == resultat_attendu
+
 # Tests pour pourcentage_mots_max
 # ============================
 def test_pourcentage_mots_max_normal():
