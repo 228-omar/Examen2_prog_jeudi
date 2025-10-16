@@ -47,8 +47,10 @@ def pourcentage_mots_max(mots: list, taille: int): # calcule le pourcentage de m
     count_sup = 0
     for mot in mots:
         longueur = len(mot)
+        total_valide += 1
         if longueur < taille:
             count_sup = 1
+
 
     try:
         pourcentage = (count_sup / total_valide) * 100
